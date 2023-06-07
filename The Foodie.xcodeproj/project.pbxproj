@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2037FDC2A2EDBC1004DEF42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */; };
+		F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */; };
+		F2037FE32A2EDBC1004DEF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2037FE12A2EDBC1004DEF42 /* Main.storyboard */; };
+		F2037FE52A2EDBC2004DEF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2037FE42A2EDBC2004DEF42 /* Assets.xcassets */; };
+		F2037FE82A2EDBC2004DEF42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2037FE62A2EDBC2004DEF42 /* LaunchScreen.storyboard */; };
+		F2037FF02A2EDC6E004DEF42 /* RestaurantTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */; };
+		F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */; };
+		F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FF32A308863004DEF42 /* Restaurant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F2037FD82A2EDBC1004DEF42 /* The Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Foodie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F2037FE22A2EDBC1004DEF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2037FE42A2EDBC2004DEF42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2037FE72A2EDBC2004DEF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2037FE92A2EDBC2004DEF42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableController.swift; sourceTree = "<group>"; };
+		F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		F2037FF32A308863004DEF42 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2037FD52A2EDBC1004DEF42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2037FCF2A2EDBC1004DEF42 = {
+			isa = PBXGroup;
+			children = (
+				F2037FDA2A2EDBC1004DEF42 /* The Foodie */,
+				F2037FD92A2EDBC1004DEF42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2037FD92A2EDBC1004DEF42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FD82A2EDBC1004DEF42 /* The Foodie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2037FDA2A2EDBC1004DEF42 /* The Foodie */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */,
+				F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */,
+				F2037FFA2A30A0BD004DEF42 /* Controller */,
+				F2037FF62A30A03C004DEF42 /* Storyboard */,
+				F2037FF82A30A064004DEF42 /* View */,
+				F2037FF92A30A06F004DEF42 /* Model */,
+				F2037FE42A2EDBC2004DEF42 /* Assets.xcassets */,
+				F2037FE92A2EDBC2004DEF42 /* Info.plist */,
+			);
+			path = "The Foodie";
+			sourceTree = "<group>";
+		};
+		F2037FF62A30A03C004DEF42 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FE12A2EDBC1004DEF42 /* Main.storyboard */,
+				F2037FE62A2EDBC2004DEF42 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F2037FF82A30A064004DEF42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2037FF92A30A06F004DEF42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FF32A308863004DEF42 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2037FFA2A30A0BD004DEF42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2037FD72A2EDBC1004DEF42 /* The Foodie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2037FEC2A2EDBC2004DEF42 /* Build configuration list for PBXNativeTarget "The Foodie" */;
+			buildPhases = (
+				F2037FD42A2EDBC1004DEF42 /* Sources */,
+				F2037FD52A2EDBC1004DEF42 /* Frameworks */,
+				F2037FD62A2EDBC1004DEF42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Foodie";
+			productName = "The Foodie";
+			productReference = F2037FD82A2EDBC1004DEF42 /* The Foodie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2037FD02A2EDBC1004DEF42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					F2037FD72A2EDBC1004DEF42 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = F2037FD32A2EDBC1004DEF42 /* Build configuration list for PBXProject "The Foodie" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2037FCF2A2EDBC1004DEF42;
+			productRefGroup = F2037FD92A2EDBC1004DEF42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2037FD72A2EDBC1004DEF42 /* The Foodie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2037FD62A2EDBC1004DEF42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2037FE82A2EDBC2004DEF42 /* LaunchScreen.storyboard in Resources */,
+				F2037FE52A2EDBC2004DEF42 /* Assets.xcassets in Resources */,
+				F2037FE32A2EDBC1004DEF42 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2037FD42A2EDBC1004DEF42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */,
+				F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */,
+				F2037FDC2A2EDBC1004DEF42 /* AppDelegate.swift in Sources */,
+				F2037FF02A2EDC6E004DEF42 /* RestaurantTableController.swift in Sources */,
+				F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F2037FE12A2EDBC1004DEF42 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2037FE22A2EDBC1004DEF42 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2037FE62A2EDBC2004DEF42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2037FE72A2EDBC2004DEF42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2037FEA2A2EDBC2004DEF42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2037FEB2A2EDBC2004DEF42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2037FED2A2EDBC2004DEF42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The Foodie/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shady-Adel.The-Foodie";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2037FEE2A2EDBC2004DEF42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The Foodie/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shady-Adel.The-Foodie";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2037FD32A2EDBC1004DEF42 /* Build configuration list for PBXProject "The Foodie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2037FEA2A2EDBC2004DEF42 /* Debug */,
+				F2037FEB2A2EDBC2004DEF42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2037FEC2A2EDBC2004DEF42 /* Build configuration list for PBXNativeTarget "The Foodie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2037FED2A2EDBC2004DEF42 /* Debug */,
+				F2037FEE2A2EDBC2004DEF42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2037FD02A2EDBC1004DEF42 /* Project object */;
+}
