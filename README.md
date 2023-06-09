@@ -5,3 +5,5 @@
 3. Model view controller
 4. Swipe trailing / leading contextual actions
 5. OOP , Extensions
+6. Custom UI (Font, Color, StatusBar, Navigatuion, ..etc)
+7. MapKit (Annotations , CLGeocoder)

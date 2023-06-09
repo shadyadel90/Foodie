@@ -34,10 +34,41 @@ class RestaurantTableController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", description: "With kitchen serving gourmet burgers. We offer food every day of the week, Monday through to Sunday. Join us every Sunday from 4:30 – 7:30pm for live acoustic music!", image: "cask", isFavorite: false)
     ]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backButtonTitle = ""
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backButtonTitle = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
         tableView.cellLayoutMarginsFollowReadableWidth = true
+      //MARK: Navigation bar Customizing
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backButtonTitle = ""
+        
+    
+        if let appearance = navigationController?.navigationBar.standardAppearance
+        {
+            appearance.configureWithTransparentBackground()
+            if let customFont = UIFont(name: "Nunito-Bold", size: 45.0){
+                appearance.titleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0)]
+                appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0), .font: customFont]
+            }
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            
+        }
         
     }
     
@@ -123,14 +154,14 @@ class RestaurantTableController: UITableViewController {
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [favAction])
         return swipeConfiguration
     }
-
-//MARK: Segue
+    
+    //MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailViewSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
                 destinationController.restaurant = self.restaurants[indexPath.row]
-        }
+            }
         }
     }
     
