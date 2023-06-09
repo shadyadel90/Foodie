@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20229EB2A31C22C006B30BE /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20229EA2A31C22C006B30BE /* RestaurantDetailViewController.swift */; };
+		F20229EE2A31E1ED006B30BE /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F20229EC2A31E1ED006B30BE /* Nunito-Bold.ttf */; };
+		F20229EF2A31E1ED006B30BE /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F20229ED2A31E1ED006B30BE /* Nunito-Regular.ttf */; };
+		F20229F32A31E7CF006B30BE /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20229F22A31E7CF006B30BE /* RestaurantDetailHeaderView.swift */; };
+		F20229F52A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20229F42A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift */; };
+		F20229F72A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20229F62A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift */; };
 		F2037FDC2A2EDBC1004DEF42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */; };
 		F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */; };
 		F2037FE32A2EDBC1004DEF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2037FE12A2EDBC1004DEF42 /* Main.storyboard */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20229EA2A31C22C006B30BE /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		F20229EC2A31E1ED006B30BE /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		F20229ED2A31E1ED006B30BE /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		F20229F22A31E7CF006B30BE /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
+		F20229F42A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewDescriptionCell.swift; sourceTree = "<group>"; };
+		F20229F62A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTwoColumnCell.swift; sourceTree = "<group>"; };
 		F2037FD82A2EDBC1004DEF42 /* The Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Foodie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F20229F02A31E1FB006B30BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F20229F12A31E216006B30BE /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F20229F12A31E216006B30BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F20229EC2A31E1ED006B30BE /* Nunito-Bold.ttf */,
+				F20229ED2A31E1ED006B30BE /* Nunito-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F2037FCF2A2EDBC1004DEF42 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +89,7 @@
 		F2037FDA2A2EDBC1004DEF42 /* The Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				F20229F02A31E1FB006B30BE /* Resources */,
 				F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */,
 				F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */,
 				F2037FFA2A30A0BD004DEF42 /* Controller */,
@@ -84,7 +114,10 @@
 		F2037FF82A30A064004DEF42 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F20229F22A31E7CF006B30BE /* RestaurantDetailHeaderView.swift */,
 				F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */,
+				F20229F42A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift */,
+				F20229F62A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +133,7 @@
 		F2037FFA2A30A0BD004DEF42 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F20229EA2A31C22C006B30BE /* RestaurantDetailViewController.swift */,
 				F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */,
 			);
 			path = Controller;
@@ -163,8 +197,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20229EF2A31E1ED006B30BE /* Nunito-Regular.ttf in Resources */,
 				F2037FE82A2EDBC2004DEF42 /* LaunchScreen.storyboard in Resources */,
 				F2037FE52A2EDBC2004DEF42 /* Assets.xcassets in Resources */,
+				F20229EE2A31E1ED006B30BE /* Nunito-Bold.ttf in Resources */,
 				F2037FE32A2EDBC1004DEF42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,8 +215,12 @@
 				F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */,
 				F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */,
 				F2037FDC2A2EDBC1004DEF42 /* AppDelegate.swift in Sources */,
+				F20229F72A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift in Sources */,
+				F20229F32A31E7CF006B30BE /* RestaurantDetailHeaderView.swift in Sources */,
 				F2037FF02A2EDC6E004DEF42 /* RestaurantTableController.swift in Sources */,
+				F20229EB2A31C22C006B30BE /* RestaurantDetailViewController.swift in Sources */,
 				F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */,
+				F20229F52A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
