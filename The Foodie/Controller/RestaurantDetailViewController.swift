@@ -9,15 +9,23 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
     
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
-    
+    @IBOutlet var rateBut: UIButton!
+    @IBOutlet var rateimage: UIImageView!
     var restaurant: Restaurant = Restaurant()
+    
+   
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +35,36 @@ class RestaurantDetailViewController: UIViewController {
         
         navigationController?.hidesBarsOnSwipe = false
         navigationItem.backButtonTitle = ""
+       
+        
+        configureHeaderView()
+    }
+    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showmap" {
+                let destinationController = segue.destination as! MapViewController
+                destinationController.restaurant = restaurant
+            }
+        }
+    
+    
+    func configureHeaderView() {
+        let emojis = ["love","cool","happy","sad","angry"]
+        var menu = [UIAction]()
+        for i in emojis {
+            menu.append(UIAction(title: i.capitalized, image: UIImage(named: i), handler: { [self] (_) in
+                rateimage.image = UIImage(named: i)
+                tableView.reloadData()
+            }))
+        }
+        var demoMenu: UIMenu {
+            return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menu)
+        }
+        
+        rateBut.menu = demoMenu
+        rateBut.showsMenuAsPrimaryAction = true
+        
+        
         
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
@@ -35,8 +73,13 @@ class RestaurantDetailViewController: UIViewController {
         headerView.heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
     }
+    
+    
 }
+
+
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -55,17 +98,15 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: (String(describing: RestaurantDetailMapCell.self)), for: indexPath) as! RestaurantDetailMapCell
-                cell.configure(location: restaurant.location)
-                cell.selectionStyle = .none
+            cell.configure(location: restaurant.location)
+            cell.selectionStyle = .none
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showmap" {
-            let destinationController = segue.destination as! MapViewController
-            destinationController.restaurant = restaurant
-        }
-    }
+    
 }
+    
+
+

@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar
+        
         
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()

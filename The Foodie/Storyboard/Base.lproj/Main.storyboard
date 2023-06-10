@@ -126,19 +126,23 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-gB-dFI">
-                                            <rect key="frame" x="333" y="200" width="40" height="40"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-gB-dFI">
+                                            <rect key="frame" x="333" y="200" width="40" height="37"/>
                                             <color key="tintColor" systemColor="systemYellowColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="ZsL-au-n3A"/>
-                                                <constraint firstAttribute="width" constant="40" id="xma-aq-YMI"/>
+                                                <constraint firstAttribute="width" constant="40" id="Mdy-DU-Ilg"/>
+                                                <constraint firstAttribute="height" constant="40" id="wtn-UZ-7N2"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0jn-Ss-0jX" firstAttribute="leading" secondItem="8aj-MF-5eW" secondAttribute="leading" constant="10" id="1Lu-9T-3nY"/>
                                         <constraint firstAttribute="trailing" secondItem="0jn-Ss-0jX" secondAttribute="trailing" constant="10" id="5U3-cg-1dc"/>
+                                        <constraint firstItem="gxb-gB-dFI" firstAttribute="trailing" secondItem="8aj-MF-5eW" secondAttribute="trailingMargin" id="B18-7a-KYv"/>
                                         <constraint firstAttribute="bottom" secondItem="0jn-Ss-0jX" secondAttribute="bottom" constant="10" id="c3u-RN-Toi"/>
+                                        <constraint firstItem="gxb-gB-dFI" firstAttribute="leading" secondItem="8aj-MF-5eW" secondAttribute="leadingMargin" constant="313" id="frF-1K-voq"/>
+                                        <constraint firstItem="gxb-gB-dFI" firstAttribute="top" secondItem="8aj-MF-5eW" secondAttribute="topMargin" constant="187" id="npd-Op-gCO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gxb-gB-dFI" secondAttribute="bottom" constant="31" id="z7r-8q-pgd"/>
                                         <constraint firstItem="0jn-Ss-0jX" firstAttribute="top" secondItem="8aj-MF-5eW" secondAttribute="top" constant="10" id="ziu-Uj-pkc"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -168,7 +172,7 @@
             <objects>
                 <viewController id="M0t-IM-UDp" customClass="RestaurantDetailViewController" customModule="The_Foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zpW-DA-PkA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="XUf-vb-KxC" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="The_Foodie" customModuleProvider="target">
@@ -177,6 +181,13 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-JI-dn6">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="445"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gct-eo-SnF">
+                                    <rect key="frame" x="333" y="385" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="BEi-6Q-VDv"/>
+                                        <constraint firstAttribute="width" constant="40" id="uGm-Em-bmb"/>
+                                    </constraints>
                                 </imageView>
                                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfJ-vf-BV5">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="445"/>
@@ -226,9 +237,11 @@
                                 <constraint firstAttribute="trailing" secondItem="A9R-Vz-kZv" secondAttribute="trailing" constant="10" id="bSn-oE-0TP"/>
                                 <constraint firstAttribute="trailing" secondItem="2Hg-JI-dn6" secondAttribute="trailing" id="bec-pt-o3C"/>
                                 <constraint firstItem="p8K-ef-AV2" firstAttribute="leading" secondItem="XUf-vb-KxC" secondAttribute="leading" constant="20" id="cYZ-GZ-HZd"/>
+                                <constraint firstAttribute="trailing" secondItem="gct-eo-SnF" secondAttribute="trailing" constant="20" id="cea-zU-qQi"/>
                                 <constraint firstAttribute="trailing" secondItem="AfJ-vf-BV5" secondAttribute="trailing" id="nvK-HA-K2f"/>
                                 <constraint firstItem="2Hg-JI-dn6" firstAttribute="leading" secondItem="XUf-vb-KxC" secondAttribute="leading" id="oWZ-pd-wvI"/>
                                 <constraint firstItem="A9R-Vz-kZv" firstAttribute="top" secondItem="XUf-vb-KxC" secondAttribute="top" constant="10" id="qpm-kz-ruL"/>
+                                <constraint firstItem="p8K-ef-AV2" firstAttribute="bottom" secondItem="gct-eo-SnF" secondAttribute="bottom" id="z9p-xT-DK1"/>
                             </constraints>
                             <connections>
                                 <outlet property="headerImageView" destination="2Hg-JI-dn6" id="c5i-8D-Dg1"/>
@@ -236,6 +249,29 @@
                                 <outlet property="nameLabel" destination="JEc-o9-ff3" id="ndu-dL-k3z"/>
                                 <outlet property="typeLabel" destination="Jsp-cw-mNu" id="ytq-zH-bRW"/>
                             </connections>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="tk1-lm-ZgA">
+                            <rect key="frame" x="0.0" y="842" width="393" height="79"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG6-HE-wqh">
+                                    <rect key="frame" x="20" y="20" width="353" height="39"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Rate it">
+                                        <backgroundConfiguration key="background" cornerRadius="25">
+                                            <color key="backgroundColor" red="1" green="0.50531925374748043" blue="0.17816455562117195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </backgroundConfiguration>
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="YG6-HE-wqh" secondAttribute="trailing" constant="20" id="GLp-un-9k9"/>
+                                <constraint firstItem="YG6-HE-wqh" firstAttribute="leading" secondItem="tk1-lm-ZgA" secondAttribute="leading" constant="20" id="cXY-ig-BBs"/>
+                                <constraint firstAttribute="bottom" secondItem="YG6-HE-wqh" secondAttribute="bottom" constant="20" id="mQH-2v-zZy"/>
+                                <constraint firstItem="YG6-HE-wqh" firstAttribute="top" secondItem="tk1-lm-ZgA" secondAttribute="top" constant="20" id="y5N-sV-jur"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailViewDescriptionCell" rowHeight="39" id="slD-aK-wUt" customClass="RestaurantDetailViewDescriptionCell" customModule="The_Foodie" customModuleProvider="target">
@@ -362,9 +398,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="Hnn-5v-VNc"/>
-                    <size key="freeformSize" width="393" height="1000"/>
+                    <size key="freeformSize" width="393" height="1200"/>
                     <connections>
                         <outlet property="headerView" destination="XUf-vb-KxC" id="zSz-wI-3N4"/>
+                        <outlet property="rateBut" destination="YG6-HE-wqh" id="0Tv-r2-FKn"/>
+                        <outlet property="rateimage" destination="gct-eo-SnF" id="ukh-Uc-LoZ"/>
                         <outlet property="tableView" destination="zpW-DA-PkA" id="mJc-rm-FJP"/>
                     </connections>
                 </viewController>
