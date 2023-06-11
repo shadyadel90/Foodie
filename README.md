@@ -10,6 +10,7 @@ Part 1 ...
 7. Dark Mode, Large Text Adaptive 
 8. MapKit (Annotations , CLGeocoder)
 9. Animations (Spring, CGAffine)
+
 Part 2 ...
 10. UIImagePickerController
 11. NSLayoutAnchor
