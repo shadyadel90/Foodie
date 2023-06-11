@@ -51,12 +51,11 @@ class RestaurantTableController: UITableViewController {
         super.viewDidLoad()
         tableView.separatorStyle = .none
         tableView.cellLayoutMarginsFollowReadableWidth = true
-      //MARK: Navigation bar Customizing
+        
+        //MARK: Navigation bar Customizing
         navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = ""
-        
-    
         if let appearance = navigationController?.navigationBar.standardAppearance
         {
             appearance.configureWithTransparentBackground()
@@ -86,7 +85,7 @@ class RestaurantTableController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "datacell"
+        let cellIdentifier = "favcell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.thumbnailImageView.image = UIImage(named: self.restaurants[indexPath.row].image)
@@ -97,10 +96,7 @@ class RestaurantTableController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
+    
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -163,6 +159,10 @@ class RestaurantTableController: UITableViewController {
                 destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
+    }
+    
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
     }
     
     

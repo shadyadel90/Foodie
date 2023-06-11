@@ -15,9 +15,9 @@ class RestaurantDetailTwoColumnCell: UITableViewCell {
             column1TitleLabel.numberOfLines = 0
         }
     }
-    @IBOutlet var column1TextLabel: UILabel! {
+    @IBOutlet var column1TextLabel: UIButton! {
         didSet {
-            column1TextLabel.numberOfLines = 0
+            column1TextLabel.titleLabel?.numberOfLines = 0
         }
     }
     @IBOutlet var column2TitleLabel: UILabel! {
