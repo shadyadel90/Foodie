@@ -134,20 +134,27 @@ class RestaurantTableController: UITableViewController {
     func fetchRestaurantData(searchText: String = "") {
         // Fetch data from data store
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
-        if !searchText.isEmpty { fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@" , searchText) }
+        
+        if !searchText.isEmpty {
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
+        }
+
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
+
             do {
                 try fetchResultController.performFetch()
                 updateSnapshot(animatingChange: searchText.isEmpty ? false : true)
-                
             } catch {
                 print(error)
-            } } }
+            }
+        }
+    }
     
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

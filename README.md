@@ -18,4 +18,4 @@ Part 2
     11. NSLayoutAnchor
     12. TextFields Validation
     13. CoreData (insert,delete,update)
-    14. UISearchBar, Responsive Filtering Data
+    14. UISearchBar (name,location), Responsive Filtering Data
