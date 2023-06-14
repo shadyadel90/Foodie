@@ -17,3 +17,4 @@ Part 2
     10. UIImagePickerController
     11. NSLayoutAnchor
     12. TextFields Validation
+    13. CoreData (insert,delete,update)
