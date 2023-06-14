@@ -58,7 +58,9 @@ class RestaurantTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = dataSource
+        
         tableView.separatorStyle = .none
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.backgroundView = emptyRestaurantView
@@ -97,16 +99,7 @@ class RestaurantTableController: UITableViewController {
     }
     
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellIdentifier = "favcell"
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
-//        cell.nameLabel.text = restaurants[indexPath.row].name
-//        cell.thumbnailImageView.image = UIImage(data: self.restaurants[indexPath.row].image)
-//        cell.locationLabel.text = restaurants[indexPath.row].location
-//        cell.typeLabel.text = restaurants[indexPath.row].type
-//        cell.heartImage.isHidden = self.restaurants[indexPath.row].isFavorite ? false : true
-//        return cell
-//    }
+
     
     func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
         

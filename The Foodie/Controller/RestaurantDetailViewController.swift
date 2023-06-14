@@ -9,17 +9,20 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
     
-  
+    var restaurant: Restaurant = Restaurant()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
     @IBOutlet var rateBut: UIButton!
     @IBOutlet var rateimage: UIImageView!
-    var restaurant: Restaurant = Restaurant()
-    
+    @IBOutlet var heartButton: UIBarButtonItem!
     @IBAction func heartbarbutpressed(_ sender: UIBarButtonItem) {
-        print("s")
+        restaurant.isFavorite = !restaurant.isFavorite
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { appDelegate.saveContext()
+        }
+        sender.customView?.reloadInputViews()
     }
     
+ 
     
     
     
@@ -27,6 +30,8 @@ class RestaurantDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
+        heartbuttonn()
+        ratemenu()
     }
     
     
@@ -39,19 +44,18 @@ class RestaurantDetailViewController: UIViewController {
         
         navigationController?.hidesBarsOnSwipe = false
         navigationItem.backButtonTitle = ""
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(data: restaurant.image)
         
-        configureHeaderView()
     }
-    
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showmap" {
-                let destinationController = segue.destination as! MapViewController
-                destinationController.restaurant = restaurant
-            }
+    func ratemenu(){
+        if restaurant.rating != nil {
+            rateimage.image = UIImage(named: restaurant.rating!)
         }
-    
-    
-    func configureHeaderView() {
+        else {
+            rateimage.image = UIImage()
+        }
         let emojis = ["love","cool","happy","sad","angry"]
         var menu = [UIAction]()
         for i in emojis {
@@ -67,14 +71,22 @@ class RestaurantDetailViewController: UIViewController {
         }
         rateBut.menu = demoMenu
         rateBut.showsMenuAsPrimaryAction = true
-        headerView.nameLabel.text = restaurant.name
-        headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(data: restaurant.image)
-        let heartImage = restaurant.isFavorite ? "heart.fill" : "heart"
-        headerView.heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
-        headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
+    }
+    func heartbuttonn(){
+        if restaurant.isFavorite {
+            heartButton.image = UIImage(systemName: "heart.fill")
+        }
+        else {
+            heartButton.image = UIImage(systemName: "heart")
+        }
         
     }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showmap" {
+                let destinationController = segue.destination as! MapViewController
+                destinationController.restaurant = restaurant
+            }
+        }
     }
 
 

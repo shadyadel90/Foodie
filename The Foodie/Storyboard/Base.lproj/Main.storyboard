@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -406,7 +407,9 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="Hnn-5v-VNc">
-                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" style="plain" id="bFg-cQ-q0d">
+                        <barButtonItem key="rightBarButtonItem" width="30" springLoaded="YES" style="done" id="bFg-cQ-q0d">
+                            <imageReference key="image" image="heart" catalog="system" variableValue="1"/>
+                            <color key="tintColor" systemColor="systemYellowColor"/>
                             <connections>
                                 <action selector="heartbarbutpressed:" destination="M0t-IM-UDp" id="MLr-nS-Idh"/>
                             </connections>
@@ -415,6 +418,7 @@
                     <size key="freeformSize" width="393" height="1200"/>
                     <connections>
                         <outlet property="headerView" destination="XUf-vb-KxC" id="zSz-wI-3N4"/>
+                        <outlet property="heartButton" destination="bFg-cQ-q0d" id="ClP-Ya-YPD"/>
                         <outlet property="rateBut" destination="YG6-HE-wqh" id="0Tv-r2-FKn"/>
                         <outlet property="rateimage" destination="gct-eo-SnF" id="ukh-Uc-LoZ"/>
                         <outlet property="tableView" destination="zpW-DA-PkA" id="mJc-rm-FJP"/>
@@ -422,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8l5-e6-J4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047" y="120"/>
+            <point key="canvasLocation" x="2046.564885496183" y="119.71830985915494"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="LO5-9e-WlB">
