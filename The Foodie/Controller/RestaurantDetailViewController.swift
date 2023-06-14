@@ -16,10 +16,10 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var rateimage: UIImageView!
     @IBOutlet var heartButton: UIBarButtonItem!
     @IBAction func heartbarbutpressed(_ sender: UIBarButtonItem) {
-        restaurant.isFavorite = !restaurant.isFavorite
+        restaurant.isFavorite.toggle()
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { appDelegate.saveContext()
         }
-        sender.customView?.reloadInputViews()
+       
     }
     
  
@@ -30,8 +30,7 @@ class RestaurantDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
-        heartbuttonn()
-        ratemenu()
+       
     }
     
     
@@ -48,6 +47,8 @@ class RestaurantDetailViewController: UIViewController {
         headerView.typeLabel.text = restaurant.type
         headerView.headerImageView.image = UIImage(data: restaurant.image)
         
+        heartbuttonn()
+        ratemenu()
     }
     func ratemenu(){
         if restaurant.rating != nil {
@@ -73,12 +74,10 @@ class RestaurantDetailViewController: UIViewController {
         rateBut.showsMenuAsPrimaryAction = true
     }
     func heartbuttonn(){
-        if restaurant.isFavorite {
-            heartButton.image = UIImage(systemName: "heart.fill")
-        }
-        else {
-            heartButton.image = UIImage(systemName: "heart")
-        }
+        let heartImage = restaurant.isFavorite ? "heart.fill" : "heart"
+        let heartIconConfiguration = UIImage.SymbolConfiguration(pointSize: 25, weight: .semibold)
+        heartButton.image = UIImage(systemName: heartImage, withConfiguration: heartIconConfiguration)
+        heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
         
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
