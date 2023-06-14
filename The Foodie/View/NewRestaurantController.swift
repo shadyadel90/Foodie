@@ -6,9 +6,9 @@
 //
 
 import UIKit
-
+import CoreData
 class NewRestaurantController: UITableViewController {
-    
+    var restaurant: Restaurant!
     @IBAction func savebutton(_ sender: UIBarButtonItem) {
         saveButtonValidate()
     }
@@ -121,6 +121,22 @@ class NewRestaurantController: UITableViewController {
                 ac.addAction(ok)
                 present(ac, animated: true)
             }
+            dismiss(animated: true)
+        }
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            restaurant = Restaurant(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text!
+            restaurant.type = typeTextField.text!
+            restaurant.location = addressTextField.text!
+            restaurant.phone = phoneTextField.text!
+            restaurant.summary = descriptionTextView.text
+            restaurant.isFavorite = false
+            if let imageData = photoImageView.image?.pngData() {
+                restaurant.image = imageData
+            }
+            print("Saving data to context...")
+            appDelegate.saveContext()
+            
         }
     }
     

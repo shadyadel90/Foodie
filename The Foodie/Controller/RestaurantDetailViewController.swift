@@ -9,14 +9,18 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
     
-    
+  
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
     @IBOutlet var rateBut: UIButton!
     @IBOutlet var rateimage: UIImageView!
     var restaurant: Restaurant = Restaurant()
     
-   
+    @IBAction func heartbarbutpressed(_ sender: UIBarButtonItem) {
+        print("s")
+    }
+    
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +39,6 @@ class RestaurantDetailViewController: UIViewController {
         
         navigationController?.hidesBarsOnSwipe = false
         navigationItem.backButtonTitle = ""
-       
         
         configureHeaderView()
     }
@@ -54,28 +57,25 @@ class RestaurantDetailViewController: UIViewController {
         for i in emojis {
             menu.append(UIAction(title: i.capitalized, image: UIImage(named: i), handler: { [self] (_) in
                 rateimage.image = UIImage(named: i)
-                tableView.reloadData()
+                restaurant.rating =  i
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { appDelegate.saveContext()
+                }
             }))
         }
         var demoMenu: UIMenu {
             return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menu)
         }
-        
         rateBut.menu = demoMenu
         rateBut.showsMenuAsPrimaryAction = true
-        
-        
-        
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        headerView.headerImageView.image = UIImage(data: restaurant.image)
         let heartImage = restaurant.isFavorite ? "heart.fill" : "heart"
         headerView.heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
+        
     }
-    
-    
-}
+    }
 
 
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {
@@ -87,7 +87,7 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailViewDescriptionCell.self), for: indexPath) as! RestaurantDetailViewDescriptionCell
-            cell.descriptionLabel.text = restaurant.description
+            cell.descriptionLabel.text = restaurant.summary
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String (describing: RestaurantDetailTwoColumnCell.self), for: indexPath) as! RestaurantDetailTwoColumnCell

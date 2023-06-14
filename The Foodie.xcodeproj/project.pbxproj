@@ -25,6 +25,8 @@
 		F2F1EF822A34A9D7007482B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F1EF812A34A9D7007482B7 /* Assets.xcassets */; };
 		F2F1EF842A356D8E007482B7 /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F1EF832A356D8E007482B7 /* NewRestaurantController.swift */; };
 		F2F1EF862A357A5B007482B7 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F1EF852A357A5B007482B7 /* RoundedTextField.swift */; };
+		F2F1EFAC2A387FA7007482B7 /* The Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2F1EFAA2A387FA7007482B7 /* The Foodie.xcdatamodeld */; };
+		F2F1EFAE2A388B24007482B7 /* RestaurantDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F1EFAD2A388B24007482B7 /* RestaurantDiffableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		F2F1EF812A34A9D7007482B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F1EF832A356D8E007482B7 /* NewRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantController.swift; sourceTree = "<group>"; };
 		F2F1EF852A357A5B007482B7 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		F2F1EFAB2A387FA7007482B7 /* The Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "The Foodie.xcdatamodel"; sourceTree = "<group>"; };
+		F2F1EFAD2A388B24007482B7 /* RestaurantDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDiffableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		F2037FCF2A2EDBC1004DEF42 = {
 			isa = PBXGroup;
 			children = (
+				F2F1EFAA2A387FA7007482B7 /* The Foodie.xcdatamodeld */,
 				F2037FDA2A2EDBC1004DEF42 /* The Foodie */,
 				F2037FD92A2EDBC1004DEF42 /* Products */,
 			);
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				F2037FF32A308863004DEF42 /* Restaurant.swift */,
+				F2F1EFAD2A388B24007482B7 /* RestaurantDiffableDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F1EFAC2A387FA7007482B7 /* The Foodie.xcdatamodeld in Sources */,
 				F2C08A9E2A3366F000059553 /* MapViewController.swift in Sources */,
 				F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */,
 				F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */,
@@ -236,6 +243,7 @@
 				F20229EB2A31C22C006B30BE /* RestaurantDetailViewController.swift in Sources */,
 				F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */,
 				F2C08A9C2A33603400059553 /* RestaurantDetailMapCell.swift in Sources */,
+				F2F1EFAE2A388B24007482B7 /* RestaurantDiffableDataSource.swift in Sources */,
 				F20229F52A32BD81006B30BE /* RestaurantDetailViewDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2F1EFAA2A387FA7007482B7 /* The Foodie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2F1EFAB2A387FA7007482B7 /* The Foodie.xcdatamodel */,
+			);
+			currentVersion = F2F1EFAB2A387FA7007482B7 /* The Foodie.xcdatamodel */;
+			path = "The Foodie.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F2037FD02A2EDBC1004DEF42 /* Project object */;
 }
