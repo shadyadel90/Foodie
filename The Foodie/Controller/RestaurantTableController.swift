@@ -54,6 +54,15 @@ class RestaurantTableController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = ""
+        
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+            present(walkthroughViewController, animated: true, completion: nil )
+            
+        }
     }
     
     override func viewDidLoad() {

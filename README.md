@@ -14,8 +14,12 @@ Part 1
 
 Part 2
 
-    10. UIImagePickerController
+    10. Static Table, TextFields Validation
     11. NSLayoutAnchor
-    12. TextFields Validation
+    12. UIImagePickerController
     13. CoreData (insert,delete,update)
     14. UISearchBar (name,location), Responsive Filtering Data
+    15. UIPageView , WalkthroughScreens 
+    16. Userdefaults
+    17. Protocols
+    18. TabBar ,refactored storyboards (in progress)

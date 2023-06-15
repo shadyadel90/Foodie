@@ -20,6 +20,12 @@
 		F2037FF02A2EDC6E004DEF42 /* RestaurantTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */; };
 		F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */; };
 		F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037FF32A308863004DEF42 /* Restaurant.swift */; };
+		F23111992A3B30080014A150 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23111982A3B30080014A150 /* Discover.storyboard */; };
+		F231119C2A3B30230014A150 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F231119A2A3B30230014A150 /* About.storyboard */; };
+		F2608B4A2A39D65200047C61 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2608B492A39D65200047C61 /* Onboarding.storyboard */; };
+		F2608B4C2A39D89400047C61 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2608B4B2A39D89400047C61 /* WalkthroughContentViewController.swift */; };
+		F2608B4E2A39D93700047C61 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2608B4D2A39D93700047C61 /* WalkthroughPageViewController.swift */; };
+		F2608B522A39DAE200047C61 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2608B512A39DAE200047C61 /* WalkthroughViewController.swift */; };
 		F2C08A9C2A33603400059553 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C08A9B2A33603400059553 /* RestaurantDetailMapCell.swift */; };
 		F2C08A9E2A3366F000059553 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C08A9D2A3366F000059553 /* MapViewController.swift */; };
 		F2F1EF822A34A9D7007482B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F1EF812A34A9D7007482B7 /* Assets.xcassets */; };
@@ -45,6 +51,12 @@
 		F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableController.swift; sourceTree = "<group>"; };
 		F2037FF12A2EE523004DEF42 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		F2037FF32A308863004DEF42 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		F23111982A3B30080014A150 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = SOURCE_ROOT; };
+		F231119B2A3B30230014A150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		F2608B492A39D65200047C61 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		F2608B4B2A39D89400047C61 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		F2608B4D2A39D93700047C61 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		F2608B512A39DAE200047C61 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		F2C08A9B2A33603400059553 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		F2C08A9D2A3366F000059553 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F2F1EF812A34A9D7007482B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,8 +130,11 @@
 		F2037FF62A30A03C004DEF42 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F231119A2A3B30230014A150 /* About.storyboard */,
+				F23111982A3B30080014A150 /* Discover.storyboard */,
 				F2037FE12A2EDBC1004DEF42 /* Main.storyboard */,
 				F2037FE62A2EDBC2004DEF42 /* LaunchScreen.storyboard */,
+				F2608B492A39D65200047C61 /* Onboarding.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -153,6 +168,9 @@
 				F20229EA2A31C22C006B30BE /* RestaurantDetailViewController.swift */,
 				F2037FEF2A2EDC6E004DEF42 /* RestaurantTableController.swift */,
 				F2C08A9D2A3366F000059553 /* MapViewController.swift */,
+				F2608B4B2A39D89400047C61 /* WalkthroughContentViewController.swift */,
+				F2608B4D2A39D93700047C61 /* WalkthroughPageViewController.swift */,
+				F2608B512A39DAE200047C61 /* WalkthroughViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,8 +235,11 @@
 			files = (
 				F20229EF2A31E1ED006B30BE /* Nunito-Regular.ttf in Resources */,
 				F2037FE82A2EDBC2004DEF42 /* LaunchScreen.storyboard in Resources */,
+				F231119C2A3B30230014A150 /* About.storyboard in Resources */,
 				F20229EE2A31E1ED006B30BE /* Nunito-Bold.ttf in Resources */,
+				F2608B4A2A39D65200047C61 /* Onboarding.storyboard in Resources */,
 				F2037FE32A2EDBC1004DEF42 /* Main.storyboard in Resources */,
+				F23111992A3B30080014A150 /* Discover.storyboard in Resources */,
 				F2F1EF822A34A9D7007482B7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,14 +254,17 @@
 				F2F1EFAC2A387FA7007482B7 /* The Foodie.xcdatamodeld in Sources */,
 				F2C08A9E2A3366F000059553 /* MapViewController.swift in Sources */,
 				F2037FF42A308863004DEF42 /* Restaurant.swift in Sources */,
+				F2608B522A39DAE200047C61 /* WalkthroughViewController.swift in Sources */,
 				F2037FF22A2EE523004DEF42 /* RestaurantTableViewCell.swift in Sources */,
 				F2F1EF862A357A5B007482B7 /* RoundedTextField.swift in Sources */,
 				F2037FDC2A2EDBC1004DEF42 /* AppDelegate.swift in Sources */,
 				F20229F72A32C06D006B30BE /* RestaurantDetailTwoColumnCell.swift in Sources */,
+				F2608B4E2A39D93700047C61 /* WalkthroughPageViewController.swift in Sources */,
 				F20229F32A31E7CF006B30BE /* RestaurantDetailHeaderView.swift in Sources */,
 				F2037FF02A2EDC6E004DEF42 /* RestaurantTableController.swift in Sources */,
 				F2F1EF842A356D8E007482B7 /* NewRestaurantController.swift in Sources */,
 				F20229EB2A31C22C006B30BE /* RestaurantDetailViewController.swift in Sources */,
+				F2608B4C2A39D89400047C61 /* WalkthroughContentViewController.swift in Sources */,
 				F2037FDE2A2EDBC1004DEF42 /* SceneDelegate.swift in Sources */,
 				F2C08A9C2A33603400059553 /* RestaurantDetailMapCell.swift in Sources */,
 				F2F1EFAE2A388B24007482B7 /* RestaurantDiffableDataSource.swift in Sources */,
@@ -265,6 +289,14 @@
 				F2037FE72A2EDBC2004DEF42 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F231119A2A3B30230014A150 /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F231119B2A3B30230014A150 /* Base */,
+			);
+			name = About.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -393,11 +425,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Foodie/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need to grant the app access to your photo library so you can pick your\nfavorite restaurant photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,11 +453,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Foodie/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need to grant the app access to your photo library so you can pick your\nfavorite restaurant photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

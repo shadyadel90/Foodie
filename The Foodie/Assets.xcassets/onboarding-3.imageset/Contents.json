@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "petiteoyster.jpg",
+      "filename" : "onboarding-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "petiteoyster@2x.jpg",
+      "filename" : "onboarding-3.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "petiteoyster@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
