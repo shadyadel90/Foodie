@@ -59,6 +59,7 @@
 		F2608B4B2A39D89400047C61 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		F2608B4D2A39D93700047C61 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		F2608B512A39DAE200047C61 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		F272AB082A4FD3F100FFEA80 /* The FoodieRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The FoodieRelease.entitlements"; sourceTree = "<group>"; };
 		F2BC1EFA2A4946B700174DE9 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		F2BC1EFC2A4D7C1200174DE9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F2C08A9B2A33603400059553 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		F2037FDA2A2EDBC1004DEF42 /* The Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				F272AB082A4FD3F100FFEA80 /* The FoodieRelease.entitlements */,
 				F20229F02A31E1FB006B30BE /* Resources */,
 				F2037FDB2A2EDBC1004DEF42 /* AppDelegate.swift */,
 				F2037FDD2A2EDBC1004DEF42 /* SceneDelegate.swift */,
@@ -431,6 +433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DFF6RWX7DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Foodie/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
@@ -457,8 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Foodie/The FoodieRelease.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DFF6RWX7DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Foodie/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
@@ -474,6 +480,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shady-Adel.The-Foodie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

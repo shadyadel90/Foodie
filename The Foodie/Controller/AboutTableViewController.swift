@@ -101,18 +101,23 @@ class AboutTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWebView" {
-            print("SSSs")
             if let destinationController = segue.destination as? WebViewController,
                let indexPath = tableView.indexPathForSelectedRow,
-               let linkItem = self.dataSource.itemIdentifier(for: indexPath) { destinationController.targetURL = linkItem.link }
+               let linkItem = self.dataSource.itemIdentifier(for: indexPath) { destinationController.targetURL = linkItem.link
+                
+            }
         }
     }
     
     func openWithSafariViewController(indexPath: IndexPath) {
         guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        
         if let url = URL(string: linkItem.link) {
-            let safariController = SFSafariViewController(url: url)
-            present(safariController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                let safariController = SFSafariViewController(url: url)
+                self.present(safariController, animated: true, completion: nil)
+            }
+           
         }
     }
 }

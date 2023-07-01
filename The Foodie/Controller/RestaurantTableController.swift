@@ -10,7 +10,7 @@ import CoreData
 
 class RestaurantTableController: UITableViewController {
     
-    
+    var spinner = UIActivityIndicatorView()
     var fetchResultController: NSFetchedResultsController<Restaurant>!
     lazy var dataSource = configureDataSource()
     
@@ -65,7 +65,7 @@ class RestaurantTableController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
+   @objc override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
@@ -101,6 +101,29 @@ class RestaurantTableController: UITableViewController {
         searchController.searchBar.placeholder = "Search restaurants..."
         searchController.searchBar.backgroundImage = UIImage()
         fetchRestaurantData()
+        
+        
+        spinner.style = .large
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
+        // Define layout constraints for the spinner
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([ spinner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150.0),
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
+        // Activate the spinner
+        spinner.startAnimating()
+        
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.white
+        refreshControl?.tintColor = UIColor.gray
+        refreshControl?.addTarget(self, action: #selector(viewDidLoad), for: UIControl.Event.valueChanged)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
+            spinner.stopAnimating()
+            if let refreshControl = self.refreshControl {
+                if refreshControl.isRefreshing { refreshControl.endRefreshing() } }
+        }
     }
     
     // MARK: - Table view data source

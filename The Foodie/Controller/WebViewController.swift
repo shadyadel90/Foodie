@@ -18,7 +18,10 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         if let url = URL(string: targetURL) {
             let request = URLRequest(url: url)
-            webView.load(request)
+            DispatchQueue.main.async {
+                self.webView.load(request)
+            }
+            
             
         }
     }
