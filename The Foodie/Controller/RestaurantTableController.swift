@@ -98,7 +98,7 @@ class RestaurantTableController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.placeholder = String(localized:"Search restaurants...")
         searchController.searchBar.backgroundImage = UIImage()
         fetchRestaurantData()
         
@@ -200,7 +200,7 @@ class RestaurantTableController: UITableViewController {
             return UISwipeActionsConfiguration()
         }
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){ [self] (_,_,completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: String(localized: "Delete")){ [self] (_,_,completionHandler) in
             //            restaurants.remove(at: indexPath.row)
             //            tableView.reloadData()
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -211,7 +211,7 @@ class RestaurantTableController: UITableViewController {
             }
             completionHandler(true)
         }
-        let shareAction = UIContextualAction(style: .normal, title: "Share") { [self] (_,_,completionHandler) in
+        let shareAction = UIContextualAction(style: .normal, title: String(localized:"Share")) { [self] (_,_,completionHandler) in
             let defaultText = "Just checking in at "  + restaurants[indexPath.row].name
             
             let activityController: UIActivityViewController
@@ -299,6 +299,89 @@ class RestaurantTableController: UITableViewController {
         dataSource.apply(snapshot, animatingDifferences: animatingChange)
         tableView.backgroundView?.isHidden = restaurants.count == 0 ? false : true
     }
+    
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        // Get the selected restaurant
+        guard let restaurant = self.dataSource.itemIdentifier(for: indexPath) else {
+            return nil
+        }
+        
+        let configuration = UIContextMenuConfiguration(identifier: indexPath.row as NSCopying, previewProvider: {
+            
+            guard let restaurantDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else {
+                return nil
+            }
+            
+            restaurantDetailViewController.restaurant = restaurant
+            
+            return restaurantDetailViewController
+            
+        }) { actions in
+            
+            let favoriteAction = UIAction(title: "Save as favorite", image: UIImage(systemName: "heart")) { action in
+                
+                let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+                self.restaurants[indexPath.row].isFavorite.toggle()
+                cell.heartImage.isHidden = !self.restaurants[indexPath.row].isFavorite
+            }
+            
+            let shareAction = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
+                
+                let defaultText = NSLocalizedString("Just checking in at ", comment: "Just checking in at") + self.restaurants[indexPath.row].name
+                
+                let activityController: UIActivityViewController
+                
+                if let imageToShare = UIImage(data: restaurant.image as Data) {
+                    activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                } else  {
+                    activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+                }
+                
+                self.present(activityController, animated: true, completion: nil)
+            }
+            
+            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
+                
+                // Delete the row from the data store
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    let context = appDelegate.persistentContainer.viewContext
+                    let restaurantToDelete = self.fetchResultController.object(at: indexPath)
+                    context.delete(restaurantToDelete)
+                    
+                    appDelegate.saveContext()
+                }
+            }
+
+            // Create and return a UIMenu with the share action
+            return UIMenu(title: "", children: [favoriteAction, shareAction, deleteAction])
+        }
+        
+        return configuration
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        
+        guard let selectedRow = configuration.identifier as? Int else {
+            print("Failed to retrieve the row number")
+            return
+        }
+        
+        guard let restaurantDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else {
+            
+            return
+        }
+        
+        restaurantDetailViewController.restaurant = self.restaurants[selectedRow]
+        
+        animator.preferredCommitStyle = .pop
+        animator.addCompletion {
+            self.show(restaurantDetailViewController, sender: self)
+        }
+    }
+    
+    
     
 }
 extension RestaurantTableController: NSFetchedResultsControllerDelegate {

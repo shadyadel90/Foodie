@@ -28,3 +28,8 @@ Part 3
 
     11. WkWebview and safariController 
     12. ClouldKit (in progress)
+    13. Refresh controller and Spinner
+    14. Localized into arabic
+    15. home context menu with 3d haptic touch
+    16. table cell preview and context actions
+    
