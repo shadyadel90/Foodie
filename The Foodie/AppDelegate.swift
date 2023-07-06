@@ -7,10 +7,13 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in if granted { print("User notifications are allowed.") } else { print("User notifications are not allowed.") } }
         
         let navBarAppearance = UINavigationBarAppearance()
         var backButtonImage = UIImage(systemName: "arrow.backward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20.0, weight: .bold))

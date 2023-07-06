@@ -29,17 +29,18 @@ class WalkthroughViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateUI()
         // Do any additional setup after loading the view.
     }
     func updateUI() {
         if let index = walkthroughPageViewController?.currentIndex {
             switch index {
             case 0...1:
-                nextButton.setTitle("NEXT", for: .normal)
+                nextButton.setTitle(String(localized:"NEXT"), for: .normal)
+                skipButton.setTitle(String(localized: "SKIP"), for: .normal)
                 skipButton.isHidden = false
             case 2:
-                nextButton.setTitle("GET STARTED", for: .normal)
+                nextButton.setTitle(String(localized:"GET STARTED"), for: .normal)
                 skipButton.isHidden = true
             default:
                 break

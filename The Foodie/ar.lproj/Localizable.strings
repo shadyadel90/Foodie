@@ -2,13 +2,46 @@
 "Address" = "العنوان";
 
 /* No comment provided by engineer. */
+"CREATE YOUR OWN FOOD GUIDE" = "قم بإنشاء دليل الطعام الخاص بك";
+
+/* No comment provided by engineer. */
 "Delete" = "ازالة";
+
+/* No comment provided by engineer. */
+"DISCOVER GREAT RESTAURANTS" = "اكتشف مطاعم رائعة\n";
+
+/* No comment provided by engineer. */
+"Facebook" = "فيس بوك";
+
+/* No comment provided by engineer. */
+"Find restaurants shared by your friends and other foodies" = "ابحث عن المطاعم التي يشاركها أصدقاؤك وعشاق الطعام الآخرون";
+
+/* No comment provided by engineer. */
+"GET STARTED" = "هيا نبدا";
+
+/* No comment provided by engineer. */
+"Instagram" = "انستغرام";
+
+/* Just checking in at */
+"Just checking in at " = "مجرد تسجيل الوصول في";
+
+/* No comment provided by engineer. */
+"NEXT" = "التالي";
 
 /* No comment provided by engineer. */
 "Phone" = "الهاتف";
 
 /* No comment provided by engineer. */
+"Pin your favorite restaurants and create your own food guide" = "قم بتثبيت مطاعمك المفضلة وقم بإنشاء دليل طعام خاص بك";
+
+/* No comment provided by engineer. */
 "Rate us on App Store" = "قيمنا علي متجر التطبيقات";
+
+/* No comment provided by engineer. */
+"Save as favorite" = "سجل كمفضل اليك";
+
+/* No comment provided by engineer. */
+"Search and locate your favourite restaurant on Maps" = "ابحث وحدد موقع مطعمك المفضل على الخرائط";
 
 /* No comment provided by engineer. */
 "Search restaurants..." = "ابحث عن مطعم";
@@ -17,5 +50,14 @@
 "Share" = "شارك";
 
 /* No comment provided by engineer. */
+"SHOW YOU THE LOCATION" = "يظهر لك الموقع\n";
+
+/* No comment provided by engineer. */
+"SKIP" = "تخطى";
+
+/* No comment provided by engineer. */
 "Tell us your feedback" = "اخبرنا عن رايك";
+
+/* No comment provided by engineer. */
+"Twitter" = "تويتر";
 

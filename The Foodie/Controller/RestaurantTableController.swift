@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class RestaurantTableController: UITableViewController {
     
@@ -68,6 +69,8 @@ class RestaurantTableController: UITableViewController {
    @objc override func viewDidLoad() {
         super.viewDidLoad()
         
+       prepareNotification()
+       
         tableView.dataSource = dataSource
         
         tableView.separatorStyle = .none
@@ -319,14 +322,14 @@ class RestaurantTableController: UITableViewController {
             
         }) { actions in
             
-            let favoriteAction = UIAction(title: "Save as favorite", image: UIImage(systemName: "heart")) { action in
+            let favoriteAction = UIAction(title: String(localized:"Save as favorite"), image: UIImage(systemName: "heart")) { action in
                 
                 let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
                 self.restaurants[indexPath.row].isFavorite.toggle()
                 cell.heartImage.isHidden = !self.restaurants[indexPath.row].isFavorite
             }
             
-            let shareAction = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
+            let shareAction = UIAction(title: String(localized:"Share"), image: UIImage(systemName: "square.and.arrow.up")) { action in
                 
                 let defaultText = NSLocalizedString("Just checking in at ", comment: "Just checking in at") + self.restaurants[indexPath.row].name
                 
@@ -341,7 +344,7 @@ class RestaurantTableController: UITableViewController {
                 self.present(activityController, animated: true, completion: nil)
             }
             
-            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
+            let deleteAction = UIAction(title: String(localized:"Delete"), image: UIImage(systemName: "trash"), attributes: .destructive) { action in
                 
                 // Delete the row from the data store
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -381,7 +384,51 @@ class RestaurantTableController: UITableViewController {
         }
     }
     
+    // MARK: - User Notification
     
+    func prepareNotification() {
+        // Make sure the restaurant array is not empty
+        if restaurants.count <= 0 {
+            return
+        }
+
+        // Pick a restaurant randomly
+        let randomNum = Int.random(in: 0..<restaurants.count)
+        let suggestedRestaurant = restaurants[randomNum]
+
+        // Create the user notification
+        let content = UNMutableNotificationContent()
+        content.title = "Restaurant Recommendation"
+        content.subtitle = "Try new food today"
+        content.body = "I recommend you to check out \(suggestedRestaurant.name). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location). Would you like to give it a try?"
+        content.sound = UNNotificationSound.default
+
+        // Add image to the notification
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
+
+        if let image = UIImage(data: suggestedRestaurant.image as Data) {
+
+            try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage", url: tempFileURL, options: nil) {
+                content.attachments = [restaurantImage]
+            }
+        }
+        
+        let categoryIdentifer = "foodpin.restaurantaction"
+        let makeReservationAction = UNNotificationAction(identifier: "foodpin.makeReservation", title: "Reserve a table", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "foodpin.cancel", title: "Later", options: [])
+        let category = UNNotificationCategory(identifier: categoryIdentifer, actions: [makeReservationAction, cancelAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        content.categoryIdentifier = categoryIdentifer
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: content, trigger: trigger)
+
+        // Schedule the notification
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+    }
     
 }
 extension RestaurantTableController: NSFetchedResultsControllerDelegate {

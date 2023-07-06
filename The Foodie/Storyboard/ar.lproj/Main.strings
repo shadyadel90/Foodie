@@ -29,7 +29,7 @@
 "Fkg-w5-yPO.text" = "الموقع";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "FpD-8m-fdF"; */
-"FpD-8m-fdF.title" = "Item";
+"FpD-8m-fdF.title" = "غرض";
 
 /* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "gge-sE-tt9"; */
 "gge-sE-tt9.title" = "المفضلات";
@@ -86,7 +86,7 @@
 "YG6-HE-wqh.configuration.title" = "تقييم";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YG6-HE-wqh"; */
-"YG6-HE-wqh.normalTitle" = "Button";
+"YG6-HE-wqh.normalTitle" = "زر";
 
 /* Class = "UILabel"; text = "ADDRESS"; ObjectID = "zvB-Kl-yX0"; */
 "zvB-Kl-yX0.text" = "العنوان";
